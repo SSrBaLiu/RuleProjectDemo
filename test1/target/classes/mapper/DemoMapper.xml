@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="demo.DAO.DemoDAO">
+
+    <resultMap id="getApproveInfResultMap" type="demo.entities.ApproveInf">
+        <id column="activityLabel" property="activityLabel" jdbcType="VARCHAR" />
+        <id column="activityName"  property="activityName"  jdbcType="VARCHAR" />
+        <id column="executor"      property="executor"      jdbcType="VARCHAR" />
+        <id column="executorName"  property="executorName"  jdbcType="VARCHAR" />
+        <id column="finished"      property="finished"      jdbcType="DATE"/>
+        <id column="id"            property="id"            jdbcType="INTEGER" />
+        <id column="opinion"       property="opinion"       jdbcType="VARCHAR" />
+        <id column="parentId"      property="parentId"      jdbcType="INTEGER" />
+        <id column="pid"           property="pid"           jdbcType="INTEGER" />
+        <id column="status"        property="status"        jdbcType="INTEGER" />
+        <id column="statusName"    property="statusName"    jdbcType="VARCHAR" />
+        <id column="uid"           property="uid"           jdbcType="VARCHAR" />
+    </resultMap>
+
+    <resultMap id="getExamineAndApproveResultMap" type="demo.entities.ExamineAndApprove">
+        <id column="applyType"     property="applyType"     jdbcType="CHAR"    />
+        <id column="approveList"   property="approveList"   jdbcType="VARCHAR" />
+        <id column="approveResult" property="approveResult" jdbcType="CHAR"    />
+        <id column="blncId"        property="blncId"        jdbcType="BIGINT"  />
+    </resultMap>
+
+    <select id="getApproveInf" parameterType="String" resultMap="getApproveInfResultMap">
+        select * from approveinf where uid=#{uid};
+    </select>
+
+    <select id="getExamineAndApprove" parameterType="Long" resultMap="getExamineAndApproveResultMap">
+        select * from examine_and_approve where blncId=#{blncId};
+    </select>
+
+    <insert id="saveExamineAndApprove" parameterType="demo.entities.ExamineAndApprove">
+        insert into examine_and_approve(applyType,approveList,approveResult,blncId) values (#{applyType},#{approveList},#{approveResult},#{blncId});
+    </insert>
+
+    <insert id="saveApproveInf" parameterType="demo.entities.ApproveInf">
+        insert into approveinf(
+                                activityLabel,
+                                activityName,
+                                executor,
+                                executorName,
+                                finished,
+                                id,
+                                opinion,
+                                parentId,
+                                pid,
+                                status,
+                                statusName,
+                                uid
+                              )
+                      values (
+                               #{activityLabel},
+                               #{activityName},
+                               #{executor},
+                               #{executorName},
+                               #{finished},
+                               #{id},
+                               #{opinion},
+                               #{parentId},
+                               #{pid},
+                               #{status},
+                               #{statusName},
+                               #{uid},
+                             )
+    </insert>
+</mapper>
