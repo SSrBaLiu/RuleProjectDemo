@@ -9,14 +9,14 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>test2</artifactId>
+    <artifactId>listenMoudle</artifactId>
 
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>com.atguigu.springcloudlearning</groupId>-->
-<!--            <artifactId>cloud-api-commons</artifactId>-->
-<!--            <version>${project.version}</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.atguigu.springcloudlearning</groupId>-->
+        <!--            <artifactId>cloud-api-commons</artifactId>-->
+        <!--            <version>${project.version}</version>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>

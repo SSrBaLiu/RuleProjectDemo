@@ -10,6 +10,7 @@
     <modules>
         <module>test1</module>
         <module>test2</module>
+        <module>listenMoudle</module>
     </modules>
 
     <packaging>pom</packaging>

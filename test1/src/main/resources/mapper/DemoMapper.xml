@@ -9,7 +9,7 @@
         <id column="activityName"  property="activityName"  jdbcType="VARCHAR" />
         <id column="executor"      property="executor"      jdbcType="VARCHAR" />
         <id column="executorName"  property="executorName"  jdbcType="VARCHAR" />
-        <id column="finished"      property="finished"      jdbcType="DATE"/>
+        <id column="finished"      property="finished"      jdbcType="VARCHAR"/>
         <id column="id"            property="id"            jdbcType="INTEGER" />
         <id column="opinion"       property="opinion"       jdbcType="VARCHAR" />
         <id column="parentId"      property="parentId"      jdbcType="INTEGER" />
@@ -65,7 +65,7 @@
                                #{pid},
                                #{status},
                                #{statusName},
-                               #{uid},
+                               #{uid}
                              )
     </insert>
 </mapper>

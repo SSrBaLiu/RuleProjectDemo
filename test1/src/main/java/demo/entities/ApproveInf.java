@@ -1,5 +1,6 @@
 package demo.entities;
 
+import cn.hutool.core.date.DateTime;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,7 +17,7 @@ public class ApproveInf implements Serializable {
     private String activityName;
     private String executor;
     private String executorName;
-    private Date finished;
+    private String finished;
     private int id;
     private String opinion;
     private int parentId;

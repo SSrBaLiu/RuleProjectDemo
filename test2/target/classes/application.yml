@@ -1,0 +1,13 @@
+server:
+  port: 8706
+
+spring:
+  application:
+    name: cloud-payment-service
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: com.mysql.jdbc.Driver              # mysql驱动包 com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3310/db_for_rule_project_source?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
