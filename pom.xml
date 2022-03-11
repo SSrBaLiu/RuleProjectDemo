@@ -11,6 +11,7 @@
         <module>test1</module>
         <module>test2</module>
         <module>listenMoudle</module>
+        <module>rest-template-post-test</module>
     </modules>
 
     <packaging>pom</packaging>

@@ -3,6 +3,8 @@ package org.liuep1.controllers;
 
 import lombok.extern.slf4j.Slf4j;
 import org.liuep1.entities.CommonResult;
+import org.liuep1.entities.ExamineAndApproveComplete;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -53,5 +55,15 @@ public class ListenController {
         }
 
         return new CommonResult(200,"获得对象",object);
+    }
+
+    @RequestMapping("/xmlTest")
+    public CommonResult XmlListener(@RequestBody ExamineAndApproveComplete examineAndApproveComplete){
+        CommonResult commonResult = new CommonResult();
+        commonResult.setCode(200);
+        commonResult.setMessage("测试成功");
+        commonResult.setData(examineAndApproveComplete);
+
+        return commonResult;
     }
 }
